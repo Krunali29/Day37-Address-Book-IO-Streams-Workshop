@@ -27,7 +27,9 @@ public class Book {
             System.out.println("12.Read data");
             System.out.println("13.Write Data in CSV file");
             System.out.println("14.Read data from CSV file");
-            System.out.println("15.Exit");
+            System.out.println("15.Write Data in the Json file");
+            System.out.println("16.Read data from Json file ");
+            System.out.println("17.Exit");
 
             System.out.println("Enter choice: ");
             int option = sc.nextInt();
@@ -105,7 +107,6 @@ public class Book {
                         e.printStackTrace();
                     }
                     break;
-
                 case 14:
                     try {
                         AddressBook.readDataUsingCSV();
@@ -115,12 +116,26 @@ public class Book {
 
                     break;
                 case 15:
+                    try {
+                        AddressBook.writeDataInJSon();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 16:
+                    try {
+                        AddressBook.readDataFromJson();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 17:
                     flag = false;
                     break;
             }
         }
-
     }
-
 }
 
